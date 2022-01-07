@@ -1,5 +1,4 @@
 var XMLHttpRequest = require('xhr2');
-var request = new XMLHttpRequest();
 
 module.exports = {
     name: "check",
@@ -7,15 +6,17 @@ module.exports = {
         console.log("check");
         const guild_id=message.guild.id;
         const check_guild=`http://localhost:5000/guild/${guild_id}`;
-        console.log(check_guild);
+        var request = new XMLHttpRequest();
         request.open('GET', check_guild);
         request.onreadystatechange = function () {
             if (request.readyState === 4) {
                 if (request.status === 200) {
                     console.log("guild present");
                 }
-                else
+                else{
                     console.log("guild not present");
+
+                }
             }
         };
         request.send();
