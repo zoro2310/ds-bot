@@ -9,7 +9,6 @@ module.exports = {
         if (message.author.bot) return;
         console.log(message.content);
         await checkpresence.execute(message);
-        //await addxp.execute(message,1);
-        //await userpresence.execute(message);
+        await addxp.execute(null, message,null,null);
     }
 }
