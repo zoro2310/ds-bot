@@ -19,11 +19,11 @@ module.exports = {
         });
         if(gresponse.status ==200){
             console.log("guild is present");
-            createuser.execute(message);
+            await createuser.execute(message);
         }
         else{
             console.log("guild is not present");
-            createguild.execute(message);
+            await createguild.execute(message);
         }
     }
 }

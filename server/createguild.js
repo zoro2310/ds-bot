@@ -1,4 +1,5 @@
 var XMLHttpRequest = require('xhr2');
+const createuser = require('./createuser');
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 module.exports = {
@@ -20,6 +21,7 @@ module.exports = {
         });
         if (presponse.status == 200) {
             console.log("guild is created");
+            await createuser.execute(message);
         }
         else {
             console.log("guild is not created");
