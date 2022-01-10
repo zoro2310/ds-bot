@@ -1,6 +1,5 @@
 const addxp = require('../server/addxp');
 const checkpresence=require('../server/checkpresence');
-//const userpresence=require('../server/userpresence');
 
 module.exports = {
     name: "messageCreate",
@@ -9,6 +8,6 @@ module.exports = {
         if (message.author.bot) return;
         console.log(message.content);
         await checkpresence.execute(message);
-        await addxp.execute(null, message,null,null);
+        await addxp.execute(null,message,1,null);
     }
 }
